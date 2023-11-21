@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="../css/style.css">
+     <title>Login</title>
+</head>
+<body>
+     <header>
+        <h2 class="logo"> <a href="index.html">ГАКОУ</a></h2>
+         <nav class="navigation">
+           <ul>
+                <li><a href="index.html">Услуги</a></li>
+                <li><a href="#">Журнал</a></li>
+                <li>
+                     <a href="#">Пользователь</a>
+                     <ul>
+                          <li><a href="account.html">Личный кабинет</a></li>
+                          <li><a href="#">Админпанель</a></li>
+                          <li><a href="login.html">Выход</a></li>
+                     </ul>
+                </li>
+           </ul>
+         </nav>
+     </header>
+     <div class="container">
+          <div class="container-blur">
+               <h3>Персональные данные</h3>
+               <div class="avatar">
+                    <p>Аватар</p>
+                    <div class="avatar-container avatar-size">
+                         <img src="../img/avatar.jpg" class="avatar-image">
+
+                         <div class="edit-container">
+                         <div>📷</div>
+                         </div>
+                    </div>
+                    <form action="#">
+                         <div class="input-group">
+                             <label for="text">ФИО:</label>
+                             <input type="text" id="text" name="text" required>  
+                         </div>
+                         <div class="input-group">
+                             <label for="date">Дата рождения:</label>
+                             <input type="date" id="date" name="date" required>  
+                         </div>
+                         <p>Паспорт</p>
+                         <div class="input-group">
+                             <label for="text">Номер, серия:</label>
+                             <input type="text" id="text" name="text" required>  
+                         </div>
+                         <div class="input-group">
+                             <label for="text">Дата выдачи:</label>
+                             <input type="date" id="date" name="date" required>  
+                         </div>
+                         <div class="input-group">
+                             <label for="text">Кем выдан:</label>
+                             <input type="text" id="text" name="text" required>  
+                         </div>
+                         <div class="input-group">
+                              <label for="text">Адрес регистрации:</label>
+                              <input type="text" id="text" name="text" required>  
+                          </div>
+                          <div class="input-group">
+                              <label for="text">Адрес проживания:</label>
+                              <input type="text" id="text" name="text" required>  
+                          </div>
+                         <p>Работа</p>
+                         <div class="input-group">
+                             <label for="text">Место работы:</label>
+                             <input type="text" id="text" name="text" required>  
+                         </div>
+                         <div class="input-group">
+                             <button type="submit">Сохранить</button>
+                         </div>
+                     </form>
+               </div>
+               
+          </div>
+     </div>
+</body>
+</html>
