@@ -3,18 +3,13 @@
 <head>
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
      <link rel="stylesheet" href="../css/style.css">
      <title>Журнал</title>
 </head>
-<body>
+<i>
      <header>
        <h2 class="logo"> <a href="index.html">ЗП</a></h2>
-       <div class="d1">
-          <form>
-          <input type="text" placeholder="Искать здесь...">
-          <button type="submit">Поиск</button>
-          </form>
-        </div>
         <nav class="navigation">
           <ul>
                <li><a href="index.html">Запись</a></li>
@@ -22,20 +17,63 @@
                <li>
                     <a href="#">Пользователь</a>
                     <ul>
-                         <li><a href="account.html">Личный кабинет</a></li>
-                         <li><a href="#">Админпанель</a></li>
-                         <li><a href="login.html">Выход</a></li>
+                         <li><a href="account.html">
+                              <span class="material-icons-sharp">
+                                   person_outline
+                               </span>
+                              Личный кабинет</a></li>
+                         <li><a href="#">
+                              <span class="material-icons-sharp">
+                                   admin_panel_settings
+                               </span>
+                          Админпанель</a></li>
+                         <li><a href="login.html">
+                              <span class="material-icons-sharp">
+                                   logout
+                               </span>
+                              Выход</a></li>
                     </ul>
                </li>
           </ul>
         </nav>
      </header>
-     <section>
-
+     <section class="record">
+          <h1>Запись</h1>
      </section>
-     <aside>
-          
+     <aside class="filter">
+          <h1>Фильтр</h1>
      </aside>
+     <footer>
+          <div class="footer-content container">
+            <div class="footer-content-block">
+               <h2 class="logo"> <a href="index.html">ЗП</a></h2>
+              <p>
+                Какае-то информация, которая должна что-то объястнять пользователям.
+              </p>
+              <span>©Абра-кадабра 2023. Все права защищены</span>
+            </div>
+            <div class="footer-content-block">
+              <h2 >
+               Телефон:
+              </h2>
+              <span>
+               +7(837)23 342 2
+              </span>
+              <h2>
+               Электроная почта:
+              </h2>
+              <span>
+               company@gmail.ru
+              </span>
+              <h2>
+               Адрес:
+              </h2>
+              <span>
+               г.Оренбург ул. Чкалова д. 26
+              </span>
+            </div>
+          </div>
+     </footer>
      
 </body>
 </html>
