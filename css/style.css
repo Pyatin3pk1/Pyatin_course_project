@@ -288,29 +288,87 @@ section{
      background: rgba(255, 255, 255, 0.2); 
      width: 74%;
      display: inline-block;
-     height: 500px;
+     height: auto;
      align-items: center;
-     justify-content: center;
      border-radius: 8px;
      backdrop-filter: blur(8px);
      border: 2px var(--white) solid;
 }
-.section h1{
-     padding: 10px;
+
+.block {
+     display: flex;
+     flex: 1;
+     flex-direction: column;
+     align-items: flex-start;
+     background-color: var(--green);
+     min-width: 200px;
+     width: auto;
+     height: auto;
+     margin: 10px;
+     padding: 20px;
+     border-radius: 10px;
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.block img {
+     width: 100px;
+     height: 100px;
+     border-radius: 50%;
+     margin-right: 10px;
+     background: var(--white);
+}
+
+.block .info {
+     flex: 1;
+}
+
+.block .info h2 {
+     margin: 0;
+}
+
+.block .info p {
+     margin: 0;
+}
+.block h3 {
+     margin: 10px 0;
+}
+
+.block p {
+     margin: 5px 0;
+}
+
+.button-appointment {
+     margin-top: auto;
+     background-color: #007bff;
+     color: white;
+     padding: 10px 20px;
+     border: none;
+     border-radius: 5px;
+     cursor: pointer;
+     transition: background-color 0.3s;
+}
+
+.button-appointment:hover {
+     background-color: #0056b3;
 }
 
 aside{
      background: rgba(255, 255, 255, 0.2); 
      width: 25%;
      display: inline-block;
-     height: 500px;
+     height: auto;
      align-items: center;
      border: 2px var(--white) solid;
      justify-content: center;
      border-radius: 8px;
      backdrop-filter: blur(8px);
-     border: 2px --white solid;
 }
+.header-block h1{
+     text-align: center;
+     border-bottom: 2px var(--white) solid;
+     margin: 10px 15px 1px 15px;
+}
+
 footer{
      color: var(--white);
      height: 300px;
