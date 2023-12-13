@@ -108,13 +108,12 @@ header {
  }
 
  h3{
-     display: flex;
-     align-items: start;
-     justify-content: center;
+     display: inline-block;
      font-size: 34px;
      margin-bottom: 5px;
      margin-top: -5px;
      color: var(--white);
+
  }
 .statement{
      display: inline;
@@ -131,13 +130,15 @@ header {
      justify-content: center;
  }
  
- .container {
+ .container-log {
      display: grid;
      align-items: center;
-     width: auto;
+     width: 500px;
+     margin: auto;
      flex-wrap: wrap;
      margin-top: -60px;
 }
+
 
 .container-blur {
      background: rgba(255, 255, 255, 0.2); 
@@ -212,7 +213,6 @@ p{
 }
    
 img {
-     display: block;
      max-width: 100%;
      height: auto;
 }
@@ -289,6 +289,8 @@ section{
      width: 74%;
      display: inline-block;
      height: auto;
+     margin-top: 5px;
+     margin-bottom: 5px;
      align-items: center;
      border-radius: 8px;
      backdrop-filter: blur(8px);
@@ -298,16 +300,21 @@ section{
 .block {
      display: flex;
      flex: 1;
-     flex-direction: column;
      align-items: flex-start;
-     background-color: var(--green);
+     background-color: rgba(255, 255, 255, 0.2);
      min-width: 200px;
+     justify-content: space-between;
      width: auto;
      height: auto;
      margin: 10px;
      padding: 20px;
      border-radius: 10px;
      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.block-info{
+     display: inline-block;
+     justify-content: space-between;
 }
 
 .block img {
@@ -331,13 +338,18 @@ section{
 }
 .block h3 {
      margin: 10px 0;
+     display: inline-block;
+     position: absolute;
 }
 
 .block p {
      margin: 5px 0;
+     display: inline-block;
 }
 
 .button-appointment {
+     display: inline-block;
+     width: 150px;
      margin-top: auto;
      background-color: #007bff;
      color: white;
