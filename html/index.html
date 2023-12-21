@@ -7,21 +7,16 @@
      <link rel="stylesheet" href="../css/style.css">
      <title>Журнал</title>
 </head>
-<i>
+<body>
      <header>
      <h2 class="logo"> <a href="index.html">ЗП</a></h2>
      <nav class="navigation">
           <ul>
                <li><a href="index.html">Запись</a></li>
-               <li><a href="#">Журнал записей</a></li>
+               <li><a href="RecordLog.html">Журнал записей</a></li>
                <li>
                     <a href="#">Пользователь</a>
                     <ul>
-                         <li><a href="account.html">
-                              <span class="material-icons-sharp">
-                                   person_outline
-                         </span>
-                              Личный кабинет</a></li>
                          <li><a href="#">
                               <span class="material-icons-sharp">
                                    admin_panel_settings
@@ -47,7 +42,7 @@
                     <h3>Голубев Павел Иванович</h3>
                     <p>Кабинет: 123</p>  
                </div>
-               <button class="button-appointment">Записаться</button>
+               <button id ="btn" class="button-appointment">Записаться</button>
           </div>
           <div class="block">
                <div class="block-info">
@@ -55,7 +50,7 @@
                     <h3>Петров Дмитрий Сергеевич</h3>
                     <p>Кабинет: 234</p>
                </div>
-               <button class="button-appointment">Записаться</button>
+               <button id ="btn" class="button-appointment">Записаться</button>
           </div>
           <div class="block">
                <div class="block-info">
@@ -63,15 +58,15 @@
                     <h3>Сидоров Михаил Сидорович</h3>
                     <p>Кабинет: 345</p>
                </div>
-               <button class="button-appointment">Записаться</button>
+               <button id ="btn" class="button-appointment">Записаться</button>
           </div>
           <div class="block">
                <div class="block-info">
-                    <img src="../img/Сидоров.png" alt="">
+                    <img src="../img" alt="">
                     <h3>Заборов Алексей Павлович</h3>
                     <p>Кабинет: 111</p>
                </div>
-               <button class="button-appointment">Записаться</button>
+               <button id ="btn" class="button-appointment">Записаться</button>
           </div>
      </section>
      <aside class="filter">
@@ -110,6 +105,13 @@
           </div>
           </div>
      </footer>
-     
+     <div id="modal" class="modal">
+          <div class="modal-content">
+             <span class="close">&times;</span>
+             <div id="dates"></div>
+             <div id="timeSlots"></div>
+          </div>
+     </div>
+     <script src="../script/record.js"></script>
 </body>
 </html>
