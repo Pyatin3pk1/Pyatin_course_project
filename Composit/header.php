@@ -2,27 +2,58 @@
      <h2 class="logo"> <a href="index.php">ЗП</a></h2>
      <nav class="navigation">
           <ul>
-               <li><a href="index.php">Запись</a></li>
-               <li><a href="RecordLog.php">Журнал записей</a></li>
                <li>
                <?php if (isset($_SESSION['ID_User'])): ?>
-                         <a href="#">
-                              <?php echo $_SESSION['Full_Name']; ?>
-                         </a>
-                         <ul>
+                         <li><a href="index.php">Запись</a></li>
+                         <li><a href="RecordLog.php">Журнал записей</a></li>
+                         <li>
+                              <a href="#">
+                                   <?php echo $_SESSION['Full_Name']; ?>
+                              </a>
+                              <ul>
+                                        <li><a href="../modul/logout.php">
+                                        <span class="material-icons-sharp">
+                                             logout
+                                        </span>
+                                        Выход</a></li>
+                              </ul> 
+                         </li>
+               <?php elseif (isset($_SESSION['ID_Employee'])): ?>
                               <?php if ($_SESSION['Admin']): ?>
-                                        <li><a href="../admin/admin.php">
+                              <li><a href="index.php">Запись</a></li>
+                              <li><a href="RecordLog.php">Журнал записей</a></li>
+                              <li>
+                                   <a href="#">
+                                        <?php echo $_SESSION['Full_Name']; ?>
+                                   </a>
+                                   <ul>
+                                             <li><a href="../admin/admin.php">
+                                                  <span class="material-icons-sharp">
+                                                       admin_panel_settings
+                                                  </span>
+                                                  Админпанель</a></li>
+                                             <li><a href="../modul/logout.php">
                                              <span class="material-icons-sharp">
-                                                  admin_panel_settings
+                                                  logout
                                              </span>
-                                             Админпанель</a></li>
+                                             Выход</a></li>
+                                   </ul> 
+                              </li>
+                              <?php else: ?>    
+                              <li><a href="RecordLog.php">Журнал записей</a></li>
+                              <li>
+                                   <a href="#">
+                                        <?php echo $_SESSION['Full_Name']; ?>
+                                   </a>
+                                   <ul>
+                                             <li><a href="../modul/logout.php">
+                                             <span class="material-icons-sharp">
+                                                  logout
+                                             </span>
+                                             Выход</a></li>
+                                   </ul> 
+                              </li>
                               <?php endif; ?>
-                                   <li><a href="../modul/logout.php">
-                                   <span class="material-icons-sharp">
-                                        logout
-                                   </span>
-                                   Выход</a></li>
-                         </ul>     
                     <?php else: ?>
                          <li>
                               <a href="../html/login.php">

@@ -17,7 +17,7 @@ include '../modul/sheck.php';
                <h3>Регистрация</h3>
                <div class = "err">
                     <p>
-                      <?=$errMsg?>
+                         <?=$errMsg?>
                     </p>
                </div>
                <div class="input-group">
