@@ -1,3 +1,7 @@
+<?php
+include ('../database/db.php');
+?>
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -7,30 +11,7 @@
     <title>Record Log</title>
 </head>
 <body>
-    <header>
-        <h2 class="logo"> <a href="index.html">ЗП</a></h2>
-        <nav class="navigation">
-             <ul>
-                  <li><a href="index.html">Запись</a></li>
-                  <li><a href="#">Журнал записей</a></li>
-                  <li>
-                       <a href="#">Пользователь</a>
-                       <ul>
-                            <li><a href="#">
-                                 <span class="material-icons-sharp">
-                                      admin_panel_settings
-                            </span>
-                            Админпанель</a></li>
-                            <li><a href="login.html">
-                                 <span class="material-icons-sharp">
-                                      logout
-                                 </span>
-                                 Выход</a></li>
-                       </ul>
-                  </li>
-             </ul>
-        </nav>
-    </header>
+    <?php include ("../Composit/header.php"); ?>
         <section class="record">
             <div class="header-block">
                 <h1>Журнал записей</h1>
@@ -39,7 +20,7 @@
     <footer>
             <div class="footer-content container">
             <div class="footer-content-block">
-                <h2 class="logo"> <a href="index.html">ЗП</a></h2>
+                <h2 class="logo"> <a href="index.php">ЗП</a></h2>
             <p>
                   Какае-то информация, которая должна что-то объястнять пользователям.
             </p>

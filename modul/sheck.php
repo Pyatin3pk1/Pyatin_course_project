@@ -1,30 +1,74 @@
 <?php
-$fullName = filter_var(trim($_POST['fullName']),
-FILTER_SANITIZE_STRING);
-$email = filter_var(trim($_POST['email']),
-FILTER_SANITIZE_STRING);
-$password = filter_var(trim($_POST['password']),
-FILTER_SANITIZE_STRING);
-$password1 = filter_var(trim($_POST['password1']),
-FILTER_SANITIZE_STRING);
-if(mb_strlen($fullName) < 5 || mb_strlen($fullName) > 90) {
-echo "Недоспутимая длина логина";
-exit();
-}else if(mb_strlen($email) < 3 || mb_strlen($email) > 50){
-echo "Недоспутимая длина логина";
-exit();
-}else if(mb_strlen($password) !== mb_strlen($password1) ){
-echo "Пароли не совпадают";
-exit();
+include "../database/db.php";
+
+$errMsg = '';
+if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['button-reg'])){
+
+     $fullName = trim($_POST['fullName']);
+     $email = trim($_POST['email']);
+     $password = trim($_POST['password']);
+     $password1 = trim($_POST['password1']);
+
+     if($fullName === '' || $email === '' || $password === ''){
+          $errMsg = "Не все поля заполнены!";
+     }elseif (mb_strlen($fullName, 'UTF8') < 5){
+          $errMsg = "Имя должен быть более 5-х символов";
+     }elseif ($password !== $password1) {
+          $errMsg = "Пароли в обеих полях должны соответствовать!";
+     }else{
+          $existence = selectOne('users', ['email' => $email]);
+          if($existence['email'] === $email){
+               $errMsg = "Пользователь с такой почтой уже зарегистрирован!";
+          }else{
+               $pass = password_hash($passF, PASSWORD_DEFAULT);
+               $post = [
+                    'Full_Name' => $fullName,
+                    'Email' => $email,
+                    'Password' => $pass
+               ];
+               $id = insert('Users', $post);
+               $user = selectOne('Users', ['ID_User' => $ID_User] );
+
+               $_SESSION['ID_User'] = $user['ID_User'];
+               $_SESSION['Full_Name'] = $user['Full_Name'];
+
+               if($_SESSION['Admin']){
+                    header('Location: ../admin/admin.php');
+               }else{
+                    header('Location: ../html/index.php');
+               }
+          }
+     }
+}else{
+     $login = '';
+     $email = '';
 }
-$password=md5($password."dsad1213");
 
-$mysql = new mysqli('localhost', 'root', '', 'gky');
+//if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['button-log'])){
 
-$mysql->query("INSERT INTO `users` (`Full_Name`, `Email`, `Password`)
-VALUES('$fullName', '$email', '$password')");
+//     $email = trim($_POST['email']);
+//     $pass = trim($_POST['password']);
 
-$mysql->close();
+//     if($email === '' || $pass === ''){
+//          $errMsg = "Не все поля заполнены!";
+//     }else{
+//          $existence = selectOne('Users', ['Email' => $email]);
+//          if($existence && password_verify($pass, $existence['Password'])){
+//               $_SESSION['ID_User'] = $existence['ID_User'];
+//               $_SESSION['Full_Name'] = $existence['Full_Name'];
+               
+//               if($_SESSION['Admin']){
+//                    header('Location: ../admin/admin.php'); 
+//               }else{
+//                    header('Location: ../html/index.php');
+//               }
+//          }else{
+//               $errMsg = "Почта либо пароль введены неверно";
+//          }
+//     }         
+//}else{
+//     $email = '';
+//}
 
-header('Location: ../html/index.html')
+
 ?>

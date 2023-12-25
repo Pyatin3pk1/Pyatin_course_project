@@ -128,17 +128,16 @@ header {
      color:aqua;
      display: flex;
      justify-content: center;
- }
- 
- .container-log {
-     display: grid;
-     align-items: center;
-     width: 500px;
-     margin: auto;
-     flex-wrap: wrap;
-     margin-top: -60px;
 }
 
+.container-log {
+     display: grid;
+     align-items: center;
+     margin: auto;
+     width: 500px;
+     height: 700px;
+     padding-bottom: 150px;
+}
 
 .container-blur {
      background: rgba(255, 255, 255, 0.2); 
@@ -202,6 +201,13 @@ p{
      font-size: 20px;
      margin-top: 10px;
      margin-bottom: 10px;
+}
+
+.err p{
+     color: red;
+     padding-bottom: 10px;
+     font-size: 0.8rem;
+     font-style: italic;
 }
 
 .forgot-password {
@@ -286,7 +292,7 @@ h1 a:hover {
 }
 section{
      background: rgba(255, 255, 255, 0.2); 
-     width: 74%;
+     width: 100%;
      display: inline-block;
      height: auto;
      margin-top: 5px;
@@ -364,17 +370,6 @@ section{
      background-color: #0056b3;
 }
 
-aside{
-     background: rgba(255, 255, 255, 0.2); 
-     width: 25%;
-     display: inline-block;
-     height: auto;
-     align-items: center;
-     border: 2px var(--white) solid;
-     justify-content: center;
-     border-radius: 8px;
-     backdrop-filter: blur(8px);
-}
 .header-block h1{
      text-align: center;
      border-bottom: 2px var(--white) solid;
@@ -472,3 +467,4 @@ footer{
      text-decoration: none;
      cursor: pointer;
 }
+
