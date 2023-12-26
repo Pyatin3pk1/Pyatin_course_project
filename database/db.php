@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "../database/connect.php";
+include "connect.php";
 
 function tt($value){
      echo '<pre>';
@@ -42,6 +42,32 @@ function selectOne($table, $params = []){
      dbCheckError($query);
      return $query->fetch();
  }
+
+ function selectAll($table, $params = []){
+     global $pdo;
+     $sql = "SELECT * FROM $table";
+ 
+     if(!empty($params)){
+         $i = 0;
+         foreach ($params as $key => $value){
+             if (!is_numeric($value)){
+                 $value = "'".$value."'";
+             }
+             if ($i === 0){
+                 $sql = $sql . " WHERE $key=$value";
+             }else{
+                 $sql = $sql . " AND $key=$value";
+             }
+             $i++;
+         }
+     }
+ 
+     $query = $pdo->prepare($sql);
+     $query->execute();
+     dbCheckError($query);
+     return $query->fetchAll();
+ }
+
 function insert($table, $params){
      global $pdo;
      $i = 0;
@@ -64,4 +90,35 @@ function insert($table, $params){
      $query->execute($params);
      dbCheckError($query);
      return $pdo->lastInsertId();
+}
+
+function update($table, $id, $params){
+    global $pdo;
+    $i = 0;
+    $str = '';
+    foreach ($params as $key => $value) {
+        if ($i === 0){
+            $str = $str . $key . " = '" . $value . "'";
+        }else {
+            $str = $str .", " . $key . " = '" . $value . "'";
+        }
+        $i++;
+    }
+
+    $sql = "UPDATE $table SET $str WHERE id = $id";
+    $query = $pdo->prepare($sql);
+    $query->execute($params);
+    dbCheckError($query);
+
+}
+
+// Обновление строки в таблице
+function delete($table, $id){
+    global $pdo;
+    //DELETE FROM `topics` WHERE id = 3
+    $sql = "DELETE FROM $table WHERE id =". $id;
+    $query = $pdo->prepare($sql);
+    $query->execute();
+    dbCheckError($query);
+
 }

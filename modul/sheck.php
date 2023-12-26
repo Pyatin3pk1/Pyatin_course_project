@@ -54,7 +54,9 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['button-log'])){
                     
                     header('Location: ../html/index.php');
                     
-               }
+               }else{
+                    $errMsg = "Почта либо пароль введены неверно";
+          }
           }elseif ($existence = selectOne('Employee', ['Email' => $email])){
                if($existence && password_verify($pass, $existence['Password'])){
                     $_SESSION['ID_Employee'] = $existence['ID_Employee'];
@@ -62,10 +64,12 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['button-log'])){
                     $_SESSION['Admin'] = $existence['Admin'];
                     
                     if($_SESSION['Admin']){
-                         header('Location: ../admin/admin.php'); 
+                         header('Location: ../admin/record/index.php'); 
                     }else{
                          header('Location: ../html/RecordLog.php');
                     }
+               }else{
+                    $errMsg = "Почта либо пароль введены неверно";
                }
           }else{
                $errMsg = "Почта либо пароль введены неверно";

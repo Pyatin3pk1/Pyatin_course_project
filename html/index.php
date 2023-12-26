@@ -80,5 +80,6 @@ include '../database/db.php';
           </div>
           </div>
      </footer>
+     <script src="../script/record.js"></script>
 </body>
 </html>

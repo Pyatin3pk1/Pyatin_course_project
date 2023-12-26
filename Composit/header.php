@@ -27,7 +27,7 @@
                                         <?php echo $_SESSION['Full_Name']; ?>
                                    </a>
                                    <ul>
-                                             <li><a href="../admin/admin.php">
+                                             <li><a href="../admin/record/index.php">
                                                   <span class="material-icons-sharp">
                                                        admin_panel_settings
                                                   </span>
