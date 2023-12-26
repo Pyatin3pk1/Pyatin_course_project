@@ -15,7 +15,6 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add-record'])){
     $Title = trim($_POST['Title']);
     $Office = trim($_POST['Office']);
     $Office = trim($_POST['Office']);
-     tt($_POST);
     if($ID_Employee === '' || $Title === '' || $Office === ''){
         $errMsg = "Не все поля заполнены!";
     }elseif (mb_strlen($Title, 'UTF8') < 5){
@@ -27,14 +26,14 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add-record'])){
                'Office' => $Office,
                'Img' => $_POST['Img']
           ];
-          tt($record);
           $ID_Record = insert('Record', $record);
-          $topic = selectOne('Record', ['ID_Record' => $ID_Record] );
+          $record = selectOne('Record', ['ID_Record' => $ID_Record] );
           header('Location: ../../admin/record/index.php');
     }
 }else{
      $Title = '';
      $Office = '';
+     $Img = '';
 }
 
 

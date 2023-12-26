@@ -48,7 +48,7 @@ session_start();
                 <?php foreach ($records as $key => $record): ?>
                 <div class="row records">
                     <div class="id col-1"><?=$key + 1; ?></div>
-                    <div class="ID_Employee col-2"><?=$record['Full_Name']; ?></div>
+                    <div class="ID_Employee col-2"><?=$record['ID_Employee']; ?></div>
                     <div class="Title col-3"><?=$record['Title']; ?></div>
                     <div class="Office col-2"><?=$record['Office']; ?></div>
                     <div class="Img col-2"><?=$record['Img']; ?></div>

@@ -280,20 +280,7 @@ SIDEBAR
 .add-records form div{
     margin: 2rem 0;
 }
- 
 
- error msg
-
- .add-post .err{
-     padding: 1rem 0;
-     color: #A52A2A;
- }
- .add-post .err ul{
-     list-style-type: none;
-     color: #A52A2A;
-     padding-left: 10px;
-     font-weight: 500;
- }
 
  p{
     color: var(--white);
@@ -307,4 +294,9 @@ SIDEBAR
     padding-bottom: 10px;
     font-size: 0.8rem;
     font-style: italic;
+}
+
+.button{
+    margin-left: 25px;
+    justify-content: space-between;
 }

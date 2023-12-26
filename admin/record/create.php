@@ -61,7 +61,6 @@ include "../../modul/records.php";
                          </div>
                          <div class="input-group col">
                               <input type="file" class="form-control" name="Img" id="inputGroupFile02">
-                              <label class="input-group-text"  for="inputGroupFile02">Загрузка</label>
                          </div>
                          <div class="col">
                               <button class="btn btn-primary" name="add-record" type="submit">Сохранение записи</button>
