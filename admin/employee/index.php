@@ -1,5 +1,5 @@
 <?php
-session_start();
+include "../../modul/employees.php";
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -32,33 +32,26 @@ session_start();
                     </li>
                 </ul>
             </div>
-            <div class="record col-8">
+            <div class="employee col-8">
                 <div class="button row">
                     <a href="create.php" class="col-2 btn-success">Создать</a>
-                    <a href="index.php" class="col-2 btn-warning" >Управление</a>
+                    <a href="../../modul/pdf.php" class="col-2 btn-warning" >Управление</a>
                 </div>
-                <div class="row record-title">
-                    <?php 
-                    
-                    ?>
-                    <h2>Управление пользователями</h2>
+                <div class="row employee-title">
+                    <h3>Управление сотрудниками</h3>
                     <div class="col-2">ID_Employee</div>
-                    <div class="col-2">ФИО</div>
-                    <div class="col-2">Email</div>
-                    <div class="col-2">Пароль</div>
-                    <div class="col-1">Роль</div>
-                    <div class="col-2">Управление</div>
+                    <div class="col-5">ФИО</div>
+                    <div class="col-3">Роль</div>
                 </div>
-                <?php foreach ($records as $key => $record): ?>
-                <div class="row records">
+                <?php foreach ($employees as $key => $employee): ?>
+                <div class="row employees">
                     <div class="id col-2"><?=$key + 1; ?></div>
-                    <div class="fullName col-3"><?=$record['Full_Name']; ?></div>
-                    <div class="email col-3"><$record['Email']; ?></div>
-                    <div class="password col-3"><$record["Password"]; ?></div>
-                    <div class="roll. col-3"><$record["fullName"]; ?></div>
-                    <div class="cabinet col-2">21</div>
-                    <div class="red col-2"><a href = "">edit</a></div>
-                    <div class="del col-2"><a href = "">delete</a></div>
+                    <div class="Full_Name col-5"><?=$employee['Full_Name']; ?></div>
+                    <?php if ($employee["Admin"]): ?>
+                         <div class="Admin col-3">Admin</div>
+                    <?php else: ?>
+                         <div class="Admin col-3">Employee</div>
+                    <?php endif; ?>
                 </div>
                 <?php endforeach; ?>
             </div>

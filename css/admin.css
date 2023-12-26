@@ -248,10 +248,10 @@ SIDEBAR
      padding: 5px 10px 5px;
  }
  
- .record h2{
+ .record h3{
      text-align: center;
      justify-content: center;
-     margin: 2rem 0 1rem 0.4rem;
+     margin: 1rem 0 0rem 0.4rem;
      color:darkgoldenrod;
  }
  
@@ -278,7 +278,46 @@ SIDEBAR
  }
 
 .add-records form div{
-    margin: 2rem 0;
+    margin: 0.5rem 0;
+}
+
+
+.employee{
+    height: 100%;
+    padding: 5px 10px 5px;
+}
+
+.employee h3{
+    text-align: center;
+    justify-content: center;
+    margin: 1rem 0 0rem 0.4rem;
+    color:darkgoldenrod;
+}
+
+.employee .employee-title div{
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #d3d3d3;
+    font-weight: 700;
+}
+
+.employee .employees div{
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #d3d3d3;
+}
+.employee .employees .red{
+    color: darkgoldenrod;
+}
+.employee .employees .del{
+    color: red;
+}
+ .employee .post .id{
+    font-weight: bold;
+}
+
+.add-employee form div{
+   margin: 0.5rem 0;
 }
 
 

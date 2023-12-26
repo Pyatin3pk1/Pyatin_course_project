@@ -38,9 +38,9 @@ include "../../modul/records.php";
                     <a href="index.php" class="col-2 btn-warning" >Управление записями</a>
                 </div>
                 <div class="row add-records">
-                    <form action="create.php" method="post">
+                    <form action="create.php" method="post" enctype="myltipart/form-data">
                          <div class="row record-title">
-                              <h2>Добавление записи</h2>
+                              <h3>Добавление записи</h3>
                          </div>
                          <div class = "err">
                               <p>
@@ -58,9 +58,6 @@ include "../../modul/records.php";
                          <div class="col">
                               <label for="content" class="form-label">Кабинет</label>
                               <input type="text" name="Office" value="<?=$Office?>" class="form-control" id="content" placeholder="Введите кабинет для записи">
-                         </div>
-                         <div class="input-group col">
-                              <input type="file" class="form-control" name="Img" id="inputGroupFile02">
                          </div>
                          <div class="col">
                               <button class="btn btn-primary" name="add-record" type="submit">Сохранение записи</button>

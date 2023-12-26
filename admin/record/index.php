@@ -1,5 +1,5 @@
 <?php
-session_start();
+include "../../modul/records.php";
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -38,22 +38,21 @@ session_start();
                     <a href="index.php" class="col-2 btn-warning" >Управление записями</a>
                 </div>
                 <div class="row record-title">
-                    <h2>Управление записями</h2>
-                    <div class="col-1">ID_Record</div>
+                    <h3>Управление записями</h3>
+                    <div class="col-2">ID_Record</div>
                     <div class="col-2">ID_Employee</div>
-                    <div class="col-3">Заголовок</div>
+                    <div class="col-2">Заголовок</div>
                     <div class="col-2">Кабинет</div>
-                    <div class="col-4">Управление</div>
+                    <div class="col-3">Управление</div>
                 </div>
                 <?php foreach ($records as $key => $record): ?>
                 <div class="row records">
-                    <div class="id col-1"><?=$key + 1; ?></div>
+                    <div class="ID_Record col-2"><?=$key + 1; ?></div>
                     <div class="ID_Employee col-2"><?=$record['ID_Employee']; ?></div>
-                    <div class="Title col-3"><?=$record['Title']; ?></div>
+                    <div class="Title col-2"><?=$record['Title']; ?></div>
                     <div class="Office col-2"><?=$record['Office']; ?></div>
-                    <div class="Img col-2"><?=$record['Img']; ?></div>
-                    <div class="red col-2"><a href = "edit.php?id=<?=$record['id']?>">edit</a></div>
-                    <div class="del col-2"><a href = "#">delete</a></div>
+                    <div class="red col-2"><a href="edit.php?id=<?=$record['ID_Record'];?>">edit</a></div>
+                    <div class="del col-2"><a href="index.php?delete_id=<?=$record['ID_Record'];?>">delete</a></div>
                 </div>
                 <?php endforeach; ?>
             </div>

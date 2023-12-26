@@ -1,5 +1,7 @@
 <?php
 include '../database/db.php';
+$records = selectAll('Record');
+
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -16,38 +18,15 @@ include '../database/db.php';
           <div class="header-block">
                <h1>Запись</h1>
           </div>
-          <div class="block">
-               <div class="block-info">
-                    <img src="../img/Иванов.png" alt="">
-                    <h3>Голубев Павел Иванович</h3>
-                    <p>Кабинет: 123</p>  
+          <?php foreach($records as $record): ?>
+               <div class="block">
+                    <div class="block-info">
+                         <h2><?=$record['Title'];?></h2>
+                         <p>Кабинет: <?= $record['Office']?></p>  
+                    </div>
+                    <button id ="btn" class="button-appointment">Записаться</button>
                </div>
-               <button id ="btn" class="button-appointment">Записаться</button>
-          </div>
-          <div class="block">
-               <div class="block-info">
-                    <img src="../img/Петров.png" alt="">
-                    <h3>Петров Дмитрий Сергеевич</h3>
-                    <p>Кабинет: 234</p>
-               </div>
-               <button id ="btn" class="button-appointment">Записаться</button>
-          </div>
-          <div class="block">
-               <div class="block-info">
-                    <img src="../img/Сидоров.png" alt="">
-                    <h3>Сидоров Михаил Сидорович</h3>
-                    <p>Кабинет: 345</p>
-               </div>
-               <button id ="btn" class="button-appointment">Записаться</button>
-          </div>
-          <div class="block">
-               <div class="block-info">
-                    <img src="../img" alt="">
-                    <h3>Заборов Алексей Павлович</h3>
-                    <p>Кабинет: 111</p>
-               </div>
-               <button id ="btn" class="button-appointment">Записаться</button>
-          </div>
+          <?php endforeach; ?>
      </section>
      <footer>
           <div class="footer-content container">

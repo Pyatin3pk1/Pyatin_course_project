@@ -1,5 +1,5 @@
 <?php
-session_start();
+include "../../modul/employees.php";
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -38,7 +38,7 @@ session_start();
                     <a href="index.php" class="col-2 btn-warning" >Управление</a>
                 </div>
                 <div class="row record-title">
-                    <h2>Добавление записи</h2>
+                    <h3>Добавление сотрудника</h3>
                 </div>
                 <div class="row add-records">
                     <form action="create.php" method="post">
@@ -63,12 +63,14 @@ session_start();
                               <label for="password">Повторите пароль:</label>
                               <input type="password" class="form-control" id="password" name="password1" required>  
                          </div>
-                         <select class="form-select" aria-label="Default select example">
-                              <option selected>Employee</option>
-                              <option value="1">Admin</option>
-                         </select>
+                         <div class="form-check">
+                              <input class="form-check-input" name="admin" type="checkbox" value="1" id="flexCheckDefault">
+                              <label class="form-check-label" for="flexCheckDefault">
+                              Admin
+                              </label>
+                         </div>
                          <div class="col">
-                              <button class="btn btn-primary" type="submit">Создать</button>
+                              <button name = "employee-reg" class="btn btn-primary" type="submit">Создать</button>
                          </div>
                     </form>
             </div>

@@ -318,6 +318,13 @@ section{
      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
+h4{
+     size: 40px;
+     font-style: italic;
+     font-style:var(--green);
+     font-weight: bold;
+}
+
 .block-info{
      display: inline-block;
      justify-content: space-between;
